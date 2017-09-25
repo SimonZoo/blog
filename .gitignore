@@ -1,0 +1,11 @@
+# sqlite3
+db.sqlite3
+
+.DS_Store
+
+# python cache
+__pycache__/
+*.py[cod]
+
+venv/
+
