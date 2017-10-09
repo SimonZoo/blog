@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
 
-from .models import Article
+from .models import Article, Tag
 
 class IndexView(generic.ListView):
     template_name = 'blog/base_index.html'
@@ -35,6 +35,13 @@ class DetailView(generic.DetailView):
         self.object.increase_views()
         # 视图必须返回一个 HttpResponse 对象
         return response
+
+class CategoryView(generic.ListView):
+    model = Tag
+    template_name = 'blog/base_category.html'
+    context_object_name = 'tags'
+    def get_queryset(self):
+        return Tag.objects.all()
 
 
 def aboutme(request):

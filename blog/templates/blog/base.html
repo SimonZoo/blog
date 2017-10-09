@@ -15,10 +15,10 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand " href="#">Simon</a>
 
+    <a class="navbar-brand " href="#">Simon</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    {% block navbarSupportedContent%}
+    {% block navbarSupportedContent %}
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'blog:index' %}"> <span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
@@ -27,26 +27,17 @@
           <a class="nav-link" href="{% url 'blog:aboutme' %}">About Me</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link " href="#"><span class="fa fa-archive"></span> Other</a>
+          <a class="nav-link " href="{% url 'blog:category' %}"><span class="fa fa-archive"></span> Category</a>
         </li>
       </ul>
       {% endblock %}
-     <!--  <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" onclick="search_alert()" value="search-alert">Search</button>
-      </form> -->
+
       <div class="form-inline my-2 my-lg-0">
         <ul class="ul-img">
-          <!-- <li class="li-img">
-            <a><img src="/static/blog/images/file.png" class="little-img"></a>
-          </li> -->
           <li class="li-img">
             <a href="https://github.com/SimonZoo" target="_blank" ><img src="/static/blog/images/github.png" class="little-img" id="github-logo"></a>
           </li>
-          <!-- <li class="li-img">
-            <a><img src="/static/blog/images/twitter.png" class="little-img"></a>
-          </li>
- -->        </ul>
+        </ul>
       </div>
 
     </div>
@@ -66,9 +57,7 @@
 </div>
 <script type="text/javascript">
   window.onload = function () {
-    function search_alert() {
-    alert("Sorry,Search function isn't ready.")
-  }
+
     var githubLogo = document.getElementById("github-logo");
     githubLogo.onmouseover = function() {
       githubLogo.src = "/static/blog/images/github-hover.png";

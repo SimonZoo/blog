@@ -1,0 +1,33 @@
+{% extends "blog/base.html" %}
+
+{% block blog-content %}
+
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-md-8">
+            <div class="list-group">
+                {% for article in articles %}
+                <a href="#" class="list-group-item list-group-item-action flex-column  align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{ article.title|title }}</h5>
+                        <small class="text-muted">{{ article.pub_date | date:"M  d  Y" }}</small>
+                    </div>
+                    <p class="mb-1">{{ article.intro }}</p>
+                    <small class="text-muted">Read More</small>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+                {% for tag in tags %}
+                <li class="list-group-item justify-content-between">
+                    <a href="#">{{ tag }}</a>
+                <span class="badge badge-default badge-pill">14</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
